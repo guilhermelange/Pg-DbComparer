@@ -34,7 +34,6 @@ def getData(database):
     rs = con.query(sql.format(database.db))
     table = return_select_array(rs)
 
-
     sql = """
         SELECT sequence_name 
         FROM information_schema.sequences s 
@@ -43,7 +42,6 @@ def getData(database):
     """
     rs = con.query(sql.format(database.db))
     sequence = return_select_array(rs)
-
 
     sql = """
         SELECT c.table_name, c.column_name, c.is_nullable, c.data_type 

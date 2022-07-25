@@ -7,8 +7,8 @@ def check_tables(table1, table2):
 
 def check_sequence(sequence1, sequence2):
     create_sequence = []
-    for sequence in sequence2:
-        if not(sequence in sequence1):
+    for sequence in sequence1:
+        if not(sequence in sequence2):
             create_sequence.append(sequence)
     return create_sequence
 
@@ -31,5 +31,5 @@ def check_column(columns1, columns2):
         if table in columns2: # Tabela já existe no destino, caso contrário criará a tabela inteira
             for column in columns: # Tabela objetivo
                 if validate_column(column, columns2):
-                    create_columns.append(columns)
+                    create_columns.append(column)
     return create_columns
